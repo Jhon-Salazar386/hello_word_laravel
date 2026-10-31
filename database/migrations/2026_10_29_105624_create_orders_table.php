@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('orders', function (Blueprint $table) {
             $table->id();
-            $table->integer("customer_id");
+            $table->foreignId("user_id")->constrained()->restrictOnDelete();
             $table->float("total_amount");
             $table->string("status");
             $table->timestamps();

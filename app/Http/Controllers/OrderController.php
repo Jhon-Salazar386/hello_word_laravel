@@ -16,7 +16,7 @@ class OrderController extends Controller
 
         $orders = Order::all();
 
-        return view('dashboard', compact('orders'));
+        return view('/dashboard', compact('orders'));
 
     }
 

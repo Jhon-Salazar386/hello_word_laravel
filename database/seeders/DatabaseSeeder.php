@@ -18,13 +18,16 @@ class DatabaseSeeder extends Seeder
             'email' => 'admin@example.com',
         ]);
 
-        // 2. Generar 50 productos falsos usando ProductFactory
+        // 2. Crea 10 usuarios random
+        User::factory(10)->create();
+
+        // 3. Generar 50 productos falsos usando ProductFactory
         Product::factory(50)->create();
 
-        // 3. Genera una serie de ordenes de prueba
-        Order::factory(30)->create();
+        // 4. Genera una serie de ordenes de prueba
+        Order::factory(8)->create();
 
-        /* 3. O llamar a otros Seeders organizados por separado
+        /* 5. O llamar a otros Seeders organizados por separado
         $this->call([
             CategorySeeder::class,
             RoleSeeder::class,
