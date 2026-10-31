@@ -12,9 +12,9 @@ class ProductController extends Controller
      */
     public function index()
     {
-        $datos = Product::all();
+        $products = Product::all();
 
-        return view('dashboard', compact('datos'));
+        return view('dashboard', compact('products'));
     }
 
     /**

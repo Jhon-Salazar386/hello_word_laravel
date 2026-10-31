@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use App\Models\Product;
 use App\Models\User;
+use App\Models\Order;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -19,6 +20,9 @@ class DatabaseSeeder extends Seeder
 
         // 2. Generar 50 productos falsos usando ProductFactory
         Product::factory(50)->create();
+
+        // 3. Genera una serie de ordenes de prueba
+        Order::factory(30)->create();
 
         /* 3. O llamar a otros Seeders organizados por separado
         $this->call([
