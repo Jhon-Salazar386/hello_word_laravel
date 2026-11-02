@@ -9,11 +9,13 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/dashboard', [ProductController::class, 'index'])->middleware(['auth', 'verified'])->name('dashboard');
+Route::get('/dashboard', function() {
+    return view('dashboard');
+})->middleware(['auth', 'verified'])->name('dashboard');
 
-Route::get('/orders', function() {
-    return view('orders');
-})->middleware(['auth', 'verified'])->name('orders');
+Route::get('/products', [ProductController::class, 'index'])->middleware(['auth', 'verified'])->name('products');
+
+Route::get('/orders', [OrderController::class, 'index'])->middleware(['auth', 'verified'])->name('orders');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

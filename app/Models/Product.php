@@ -27,4 +27,10 @@ class Product extends Model
         'price' => 'decimal:2',
         'stock' => 'integer',
     ];
+
+    public function orders(): BelongsToMany
+    {
+        return $this->belongsToMany(Order::class)->withPivot(['quantity', 'unit_price'])->withTimestamps();
+    }
+
 }

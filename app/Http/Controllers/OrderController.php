@@ -12,11 +12,10 @@ class OrderController extends Controller
      */
     public function index()
     {
-        //
 
         $orders = Order::all();
 
-        return view('/dashboard', compact('orders'));
+        return view('/orders', compact('orders'));
 
     }
 

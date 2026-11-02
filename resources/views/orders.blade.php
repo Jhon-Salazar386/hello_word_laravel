@@ -10,6 +10,30 @@
             <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900 dark:text-gray-100">
                     <h2>Tabla de ordenes</h2>
+                    <table style="text-align:center;">
+                        <thead>
+                            <tr>
+                                <th>Id</th>
+                                <th>User_id</th>
+                                <th>Total_amount</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @forelse ($orders as $order)
+                                <tr>
+                                    <td>{{$order->id}}</td>
+                                    <td>{{$order->user_id}}</td>
+                                    <td>{{$order->total_amount}}</td>
+                                    <td>{{$order->status}}</td>
+                                </tr>
+
+                            @empty
+                                <p>No hay registros de productos</p>
+
+                            @endforelse
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </div>
