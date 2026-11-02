@@ -3,6 +3,7 @@
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\OrderController;
+use App\Http\Controllers\DistributorController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -16,6 +17,8 @@ Route::get('/dashboard', function() {
 Route::get('/products', [ProductController::class, 'index'])->middleware(['auth', 'verified'])->name('products');
 
 Route::get('/orders', [OrderController::class, 'index'])->middleware(['auth', 'verified'])->name('orders');
+
+Route::get('/distributors', [DistributorController::class, 'index'])->middleware(['auth', 'verified'])->name('distributors');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

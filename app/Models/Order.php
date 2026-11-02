@@ -15,6 +15,7 @@ class Order extends Model
         'user_id',
         'total_amount',
         'status',
+        'distributor_id',
     ];
 
     public function user(): BelongsTo
@@ -25,6 +26,11 @@ class Order extends Model
     public function products(): BelongsToMany
     {
         return $this->belongsToMany(Product::class)->withPivot(['quantity', 'unit_price'])->withTimestamps;
+    }
+
+    public function distributor(): BelongTo
+    {
+        return $this.belongTo(Distributor::class);
     }
 
 }

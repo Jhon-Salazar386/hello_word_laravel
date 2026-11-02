@@ -17,6 +17,7 @@
                                 <th>User_id</th>
                                 <th>Total_amount</th>
                                 <th>Status</th>
+                                <th>Distributor_id</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -26,6 +27,7 @@
                                     <td>{{$order->user_id}}</td>
                                     <td>{{$order->total_amount}}</td>
                                     <td>{{$order->status}}</td>
+                                    <td>{{$order->distributor_id}}</td>
                                 </tr>
 
                             @empty

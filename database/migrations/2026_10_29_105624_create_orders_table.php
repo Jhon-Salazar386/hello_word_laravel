@@ -16,6 +16,7 @@ return new class extends Migration
             $table->foreignId("user_id")->constrained()->restrictOnDelete();
             $table->float("total_amount");
             $table->string("status");
+            $table->foreignId('distributor_id')->constrined()->restrictOnDelete();
             $table->timestamps();
         });
     }
